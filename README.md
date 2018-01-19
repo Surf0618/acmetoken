@@ -6,7 +6,8 @@
 
 ## Development env settings
 ### Install
-1. Clone for for this repo
+1. Clone this repo. Nodejs and npm are assumed to be installed.
+2. Install truffle `npm install -g truffle`
 2. Under acmetoken do `npm install zeppelin-solidity` to install the solidity libraries
 
 ### Compile and deploy on local testnet  (truffle.js uses the default Ganace settings)
