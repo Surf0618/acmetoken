@@ -22,10 +22,10 @@
 2. Open truffle console using this command from the project directory
      `truffle console`
 3. In the console you can perfrom following test  
-  -- var acme = AcmeToken.at(AcmeToken.address) --
-  -- acme.paused() --  should show false
-  -- acme.pause() -- should execute the pause call that you can verify in Ganache
-  -- acme.paused() --  should show true as the state in the contract is now changed
+   - `var acme = AcmeToken.at(AcmeToken.address)`
+   - `acme.paused()`  should show false
+   - `acme.pause()`   should execute the pause call that you can verify in Ganache
+   - `acme.paused()`  should show true as the state in the contract is now changed
 
 ## ToDo:
 1. React app to play with certain features of the contract
