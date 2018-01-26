@@ -17,11 +17,12 @@ contract TestAcmeToken {
   }
 
   function testPauseUsingNewContract() public {
-    AcmeToken acmeToken = new AcmeToken();
+    AcmeToken acmeToken = new AcmeToken(DeployedAddresses.AcmeToken());
     Assert.equal(acmeToken.paused(),false,"paused should be initialized to false");
     acmeToken.pause();
     Assert.equal(acmeToken.paused(),true,"paused should be set to true");
     acmeToken.unpause();
     Assert.equal(acmeToken.paused(),false,"paused should be set back to false");
+    Assert.equal(acmeToken.multisigAddress(),DeployedAddresses.AcmeToken(),"multisigaddress not same");
    }
 }

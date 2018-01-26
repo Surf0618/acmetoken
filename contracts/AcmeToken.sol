@@ -8,10 +8,12 @@ contract AcmeToken is PausableToken {
   uint public decimals = 2;
   //1000 initial supply with 2 decimal places
   uint256 public INITIAL_SUPPLY =1000 * (10 ** decimals);
+  address public multisigAddress;
 
-
-  function AcmeToken() public {
+  function AcmeToken(address _multisigAddress) public {
     totalSupply = INITIAL_SUPPLY;
+    multisigAddress = _multisigAddress;
+
   }
 
 }
