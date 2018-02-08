@@ -19,14 +19,16 @@ contract('AcmeToken', function () {
       return acmeToken.paused();
     }).then(function(isPaused) {
       assert.equal(isPaused, false, "paused should be initialized to false");
-      acmeToken.pause();
+      return acmeToken.pause();
+    }).then(function(result) {
       return acmeToken.paused();
-    }).then(function(isPaused) {
+    }).then(function(isPaused){
       assert.equal(isPaused, true, "paused should be set to true");
-      acmeToken.unpause();
+      return acmeToken.unpause();
+    }).then(function(result){
       return acmeToken.paused();
     }).then(function(isPaused) {
-      assert.equal(isPaused,false,"paused should be set back to false");
+      assert.equal(isPaused,false,"paused should be set back to false");            
     });
   });
 

@@ -1,6 +1,6 @@
 pragma solidity ^0.4.18;
 
-import "zeppelin-solidity/contracts/token/PausableToken.sol";
+import "zeppelin-solidity/contracts/token/ERC20/PausableToken.sol";
 
 contract AcmeToken is PausableToken {
   string public name = "ACMETOKEN";
@@ -11,7 +11,7 @@ contract AcmeToken is PausableToken {
   address public multisigAddress;
 
   function AcmeToken(address _multisigAddress) public {
-    totalSupply = INITIAL_SUPPLY;
+    totalSupply_ = INITIAL_SUPPLY;
     multisigAddress = _multisigAddress;
 
   }
