@@ -6,7 +6,7 @@ import "../contracts/AcmeToken.sol";
 
 contract TestAcmeToken {
 
-
+  address buyerAddress = 0x123;
   //testing pause variable set and unset
   function testPauseUsingDeployedContract() public {
     AcmeToken acmeToken = AcmeToken(DeployedAddresses.AcmeToken());
@@ -17,7 +17,7 @@ contract TestAcmeToken {
   }
 
   function testPauseUsingNewContract() public {
-    AcmeToken acmeToken = new AcmeToken(DeployedAddresses.AcmeToken());
+    AcmeToken acmeToken = new AcmeToken(DeployedAddresses.AcmeToken(),buyerAddress);
     Assert.equal(acmeToken.paused(),false,"paused should be initialized to false");
     acmeToken.pause();
     Assert.equal(acmeToken.paused(),true,"paused should be set to true");
